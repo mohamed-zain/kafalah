@@ -2,12 +2,31 @@
 <script src="{{ asset('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <link href="{{ asset('vendors/bower_components/datatables/media/css/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css"/>
 @section('content')
+    @if ($errors->any())
+
+                @foreach ($errors->all() as $error)
+                    <script>
+                        window.setTimeout(function(){
+                            $.toast({
+                                heading: 'خطأ',
+                                text: '{{ $error }}',
+                                position: 'top-right',
+                                loaderBg:'#ed6f56',
+                                icon: 'error',
+                                hideAfter: 3500,
+                                stack: 6
+                            });
+                        }, 500);
+                    </script>
+                @endforeach
+
+    @endif
     @if(Session::has('Flash'))
         <script>
             window.setTimeout(function(){
                 $.toast({
                     heading: 'شكرا',
-                    text: 'تم انشاء المحفظة الفرعية بنجاح',
+                    text: 'تم انشاء القرض بنجاح',
                     position: 'top-right',
                     loaderBg:'#f0c541',
                     icon: 'success',

@@ -40,7 +40,29 @@ class LoansController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request->all());
+        $input = $request->all();
+        $this->validate($request, [
+            'name' => 'required',
+            'financing_Ceiling' => 'required',
+            //'sponsorship_Rate' => 'required',
+            'repayment_Period' => 'required',
+            'Balance' => 'required',
+            'prodects' => 'required',
+        ],
+            $messsages = array(
+                'name.required'=>'يجب كتابة الاسم',
+                'financing_Ceiling.required'=>'يجب كتابة سقف التمويل',
+                //'sponsorship_Rate.required'=>'يجب اختيار الحالة الاجتماعية',
+                'repayment_Period.required'=>'يجب كتابة فترة السداد',
+                'Balance.required'=>'يجب كتابة قيمة القرض',
+                'prodects.required'=>'يجب اختيار القطاع',
+            )
+
+        );
+        \Session::flash('Flash', 'تم ارسال الطلب لادارة الجمعية');
+        Loans::create($input);
+        return redirect()->back();
     }
 
     /**
