@@ -123,7 +123,7 @@
                                                         </form>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" form="addsub" class="btn btn-info waves-effect" id="searching">حفظ</button>
+                                                        <button type="submit" form="addsub" class="btn btn-info waves-effect" id="searching">حفظ</button>
                                                         <button type="reset" form="addsub" class="btn btn-default waves-effect">الغاء</button>
                                                     </div>
                                                 </div>
@@ -230,80 +230,5 @@
     <script src="{{ asset('vendors/bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('dist/js/dataTables-data.js') }}"></script>
     <script src="{{ asset('dist/js/myjs/subwallet.js') }}"></script>
-    <script>
-        $(document).ready(function () {
-            $(document).ajaxStart(function () {
-                $(".spinner").show();
-            }).ajaxStop(function () {
-                $(".spinner").hide();
-            });
-            $('#searching').click(function () {
 
-                $( "#addsub" ).on( "submit", function( event ) {
-
-                    $.ajaxSetup({
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        }
-                    });
-
-                    event.preventDefault();
-
-                    var data2    = $( this ).serialize();
-
-                    $.ajax({
-                        type: 'POST',
-                        url : $(this).attr('action'),
-                        data : data2 ,
-                        //dataType: 'json',
-                        cache:false,
-
-                        success  : function(data) {
-                            window.setTimeout(function(){
-                                $.toast({
-                                    heading: 'شكرا',
-                                    text: 'تم انشاء القرض بنجاح',
-                                    position: 'top-right',
-                                    loaderBg:'#f0c541',
-                                    icon: 'success',
-                                    hideAfter: 3500,
-                                    stack: 6
-                                });
-                            }, 500);
-                        },
-                        error: function(xhr, textStatus, thrownError){
-                            // console.log(thrownError);
-                            swal("للأسف!", "لم يتم حفظ البيانات!", "error");
-                        }
-
-                    });
-                    $("#addsub").trigger("reset");
-
-                });
-
-            });
-            $("#all").click(function(){
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-                $.ajax({
-                    url: "{{ url('OrdersLists') }}",
-                    type: "GET",
-                    success: function(data){
-                        $("#here").html(data);
-
-                    },
-                    error: function(){
-                        console.log("No results for " + data + ".");
-                    }
-                });
-            });
-        });
-        function playSound() {
-            var sound = document.getElementById("audio");
-            sound.play();
-        }
-    </script>
 @endsection
