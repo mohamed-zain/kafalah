@@ -123,7 +123,7 @@
                                                         </form>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="submit" form="addsub" class="btn btn-info waves-effect" >حفظ</button>
+                                                        <button type="button" form="addsub" class="btn btn-info waves-effect" id="searching">حفظ</button>
                                                         <button type="reset" form="addsub" class="btn btn-default waves-effect">الغاء</button>
                                                     </div>
                                                 </div>
@@ -160,7 +160,7 @@
                                                     </form>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="submit" form="addnew" class="btn btn-success waves-effect" data-dismiss="modal">حفظ</button>
+                                                    <button type="button" form="addnew" class="btn btn-success waves-effect" id="">حفظ</button>
                                                     <button type="reset" form="addnew" class="btn btn-default waves-effect" data-dismiss="modal">الغاء</button>
                                                 </div>
                                             </div>
@@ -179,156 +179,38 @@
                                                         <thead>
                                                         <tr>
                                                             <th>No</th>
-                                                            <th>Name</th>
-                                                            <th>Email</th>
-                                                            <th>Phone</th>
-                                                            <th>Role</th>
-                                                            <th>Joining date</th>
-                                                            <th>Salery</th>
-                                                            <th>Action</th>
+                                                            <th>الاسم</th>
+                                                            <th>المحفظة</th>
+                                                            <th>الجنس</th>
+                                                            <th>العمر</th>
+                                                            <th>رقم الهوية</th>
+                                                            <th>رقم الجوال</th>
+                                                            <th>مبلغ القرض</th>
+                                                            <th>عدد الاقساط</th>
+                                                            <th>اجراء</th>
                                                         </tr>
                                                         </thead>
                                                         <tbody>
+                                                        @foreach($data as $item)
                                                         <tr>
-                                                            <td>1</td>
-                                                            <td><a href="#">Jens Brincker</a></td>
-                                                            <td>jens@gmail.com</td>
-                                                            <td>+123 456 789</td>
-                                                            <td><span class="label label-danger">Designer</span> </td>
-                                                            <td>12-10-2014</td>
-                                                            <td>$1200</td>
-                                                            <td><a href="javascript:void(0)" class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger"></i></a></td>
+                                                            <td>{{ $item->loanId }}</td>
+                                                            <td><a href="#">{{ $item->agentName }}</a></td>
+                                                            <td>{{ $item->name }}</td>
+                                                            <td>
+                                                                @if($item->Gender == 'ذكر')
+                                                                    <span class="label label-danger">ذكر</span>
+                                                                @else
+                                                                    <span class="label label-info">انثي</span>
+                                                                @endif
+                                                            </td>
+                                                            <td>{{ $item->age }}</td>
+                                                            <td>{{ $item->identityNo }}</td>
+                                                            <td>{{ $item->phoneNo }}</td>
+                                                            <td>{{ $item->loanAmount }}</td>
+                                                            <td>{{ $item->installmentsNum }}</td>
+                                                            <td><a href="javascript:void(0)" class="text-inverse pr-10" title="تعديل" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="javascript:void(0)" class="text-inverse" title="حذف" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger"></i></a></td>
                                                         </tr>
-                                                        <tr>
-                                                            <td>2</td>
-                                                            <td><a href="#">Mark Hay</a></td>
-                                                            <td>markh@gmail.com</td>
-                                                            <td>+234 456 789</td>
-                                                            <td><span class="label label-info">Developer</span> </td>
-                                                            <td>10-09-2014</td>
-                                                            <td>$1800</td>
-                                                            <td><a href="javascript:void(0)" class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>3</td>
-                                                            <td><a href="#">Anthony Davie</a></td>
-                                                            <td>nthonyavie@gmail.com</td>
-                                                            <td>+345 456 789</td>
-                                                            <td><span class="label label-success">Accountant</span></td>
-                                                            <td>1-10-2013</td>
-                                                            <td>$2200</td>
-                                                            <td><a href="javascript:void(0)" class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>4</td>
-                                                            <td><a href="#">David Perry</a></td>
-                                                            <td>david@gmail.com</td>
-                                                            <td>+456 456 789</td>
-                                                            <td><span class="label label-inverse">HR</span></td>
-                                                            <td>2-10-2016</td>
-                                                            <td>$200</td>
-                                                            <td><a href="javascript:void(0)" class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>5</td>
-                                                            <td><a href="#">Alan Gilchrist</a></td>
-                                                            <td>alan@gmail.com</td>
-                                                            <td>+567 456 789</td>
-                                                            <td><span class="label label-danger">Manager</span></td>
-                                                            <td>10-9-2015</td>
-                                                            <td>$1200</td>
-                                                            <td><a href="javascript:void(0)" class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>6</td>
-                                                            <td><a href="#">Sue Woodger</a></td>
-                                                            <td>suew@gmail.com</td>
-                                                            <td>+678 456 789</td>
-                                                            <td><span class="label label-warning">Chairman</span></td>
-                                                            <td>10-5-2013</td>
-                                                            <td>$1500</td>
-                                                            <td><a href="javascript:void(0)" class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>7</td>
-                                                            <td><a href="#">Barry Croucher</a></td>
-                                                            <td>barry@gmail.com</td>
-                                                            <td>+123 456 789</td>
-                                                            <td><span class="label label-danger">Designer</span></td>
-                                                            <td>05-10-2012</td>
-                                                            <td>$3200</td>
-                                                            <td><a href="javascript:void(0)" class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>8</td>
-                                                            <td><a href="#">Ian Vaughn</a></td>
-                                                            <td>ian@gmail.com</td>
-                                                            <td>+234 456 789</td>
-                                                            <td><span class="label label-info">Developer</span></td>
-                                                            <td>11-10-2014</td>
-                                                            <td>$1800</td>
-                                                            <td><a href="javascript:void(0)" class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>9</td>
-                                                            <td><a href="#">Serena Fredrick</a></td>
-                                                            <td>serena@gmail.com</td>
-                                                            <td>+345 456 789</td>
-                                                            <td><span class="label label-success">Accountant</span></td>
-                                                            <td>12-5-2016</td>
-                                                            <td>$100</td>
-                                                            <td><a href="javascript:void(0)" class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>10</td>
-                                                            <td><a href="#">Tim Gray</a></td>
-                                                            <td>tim@gmail.com</td>
-                                                            <td>+456 456 789</td>
-                                                            <td><span class="label label-inverse">HR</span></td>
-                                                            <td>18-5-2009</td>
-                                                            <td>$4200</td>
-                                                            <td><a href="javascript:void(0)" class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>11</td>
-                                                            <td><a href="#">Jeremy Upton</a></td>
-                                                            <td>jeremy@gmail.com</td>
-                                                            <td>+567 456 789</td>
-                                                            <td><span class="label label-danger">Manager</span></td>
-                                                            <td>12-10-2010</td>
-                                                            <td>$5200</td>
-                                                            <td><a href="javascript:void(0)" class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>12</td>
-                                                            <td><a href="#">Emily Hick</a></td>
-                                                            <td>emily@gmail.com</td>
-                                                            <td>+123 456 789</td>
-                                                            <td><span class="label label-danger">Designer</span> </td>
-                                                            <td>12-10-2014</td>
-                                                            <td>$1200</td>
-                                                            <td><a href="javascript:void(0)" class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>13</td>
-                                                            <td><a href="#">Tom Armitage</a></td>
-                                                            <td>tom@gmail.com</td>
-                                                            <td>+234 456 789</td>
-                                                            <td><span class="label label-info">Developer</span> </td>
-                                                            <td>10-09-2014</td>
-                                                            <td>$1800</td>
-                                                            <td><a href="javascript:void(0)" class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger"></i></a></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>14</td>
-                                                            <td><a href="#">Rhian Davies</a></td>
-                                                            <td>rhian@gmail.com</td>
-                                                            <td>+345 456 789</td>
-                                                            <td><span class="label label-success">Accountant</span></td>
-                                                            <td>1-10-2013</td>
-                                                            <td>$2200</td>
-                                                            <td><a href="javascript:void(0)" class="text-inverse pr-10" title="Edit" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger"></i></a></td>
-                                                        </tr>
+                                                        @endforeach
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -344,7 +226,80 @@
         </div>
     </div>
 
+    <script>
+        $(document).ajaxStart(function () {
+            $(".spinner").show();
+        }).ajaxStop(function () {
+            $(".spinner").hide();
+        });
+        $('#searching').click(function () {
 
+            $( "#addsub" ).on( "submit", function( event ) {
+
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+
+                event.preventDefault();
+
+                var data2    = $( this ).serialize();
+
+                $.ajax({
+                    type: 'POST',
+                    url : $(this).attr('action'),
+                    data : data2 ,
+                    //dataType: 'json',
+                    cache:false,
+
+                    success  : function(data) {
+                        window.setTimeout(function(){
+                            $.toast({
+                                heading: 'شكرا',
+                                text: 'تم انشاء القرض بنجاح',
+                                position: 'top-right',
+                                loaderBg:'#f0c541',
+                                icon: 'success',
+                                hideAfter: 3500,
+                                stack: 6
+                            });
+                        }, 500);
+                    },
+                    error: function(xhr, textStatus, thrownError){
+                        // console.log(thrownError);
+                        swal("للأسف!", "لم يتم حفظ البيانات!", "error");
+                    }
+
+                });
+                $("#addsub").trigger("reset");
+
+            });
+
+        });
+        $("#all").click(function(){
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $.ajax({
+                url: "{{ url('OrdersLists') }}",
+                type: "GET",
+                success: function(data){
+                    $("#here").html(data);
+
+                },
+                error: function(){
+                    console.log("No results for " + data + ".");
+                }
+            });
+        });
+        function playSound() {
+            var sound = document.getElementById("audio");
+            sound.play();
+        }
+    </script>
     <script src="{{ asset('vendors/bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('dist/js/dataTables-data.js') }}"></script>
     <script src="{{ asset('dist/js/myjs/subwallet.js') }}"></script>

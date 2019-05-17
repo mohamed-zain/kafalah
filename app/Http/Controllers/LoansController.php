@@ -6,7 +6,7 @@ use App\Loans;
 use App\LoansTypes;
 use App\SubWallet;
 use Illuminate\Http\Request;
-
+use DB;
 class LoansController extends Controller
 {
     /**
@@ -16,7 +16,7 @@ class LoansController extends Controller
      */
     public function index()
     {
-        $data = Loans::all();
+        $data = Loans::join('sub_wallets','sub_wallets.id','=','loans.wallet_Id')->get();
         $loanstype = LoansTypes::all();
         $wallet = SubWallet::all();
         return view('loans.index',compact('data','loanstype','wallet'));
@@ -43,23 +43,36 @@ class LoansController extends Controller
         //dd($request->all());
         $input = $request->all();
         $this->validate($request, [
-            'name' => 'required',
-            'financing_Ceiling' => 'required',
-            //'sponsorship_Rate' => 'required',
-            'repayment_Period' => 'required',
-            'Balance' => 'required',
-            'prodects' => 'required',
+            'agentName' => 'required',
+            'wallet_Id' => 'required',
+            'installmentsNum' => 'required',
+            'Gender' => 'required',
+            'age' => 'required',
+            'identityNo' => 'required',
+            'phoneNo' => 'required',
+            'loanAmount' => 'required',
         ],
             $messsages = array(
-                'name.required'=>'يجب كتابة الاسم',
-                'financing_Ceiling.required'=>'يجب كتابة سقف التمويل',
-                //'sponsorship_Rate.required'=>'يجب اختيار الحالة الاجتماعية',
-                'repayment_Period.required'=>'يجب كتابة فترة السداد',
-                'Balance.required'=>'يجب كتابة قيمة القرض',
-                'prodects.required'=>'يجب اختيار القطاع',
+                'agentName.required'=>'يجب كتابة الاسم',
+                'wallet_Id.required'=>'يجب اختيار المحفظة',
+                'installmentsNum.required'=>'يجب كتابة عدد الاقساط ',
+                'Gender.required'=>'يجب اختيار الجنس',
+                'age.required'=>'يجب كتابة العمر',
+                'identityNo.required'=>'يجب كتابة رقم الهوية',
+                'phoneNo.required'=>'يجب كتابة رقم الجوال',
+                'loanAmount.required'=>'يجب كتابة قيمة القرض',
             )
 
         );
+        $J = DB::table('loans')->orderby('id', 'DESC')->first();
+        if (isset($J)) {
+            $b = 1 + $J->id;
+        } else {
+            $b = 1 + 0;
+        };
+
+        $key = '1700'.$b;
+        $input['loanId'] = $key;
         \Session::flash('Flash', 'تم ارسال الطلب لادارة الجمعية');
         Loans::create($input);
         return redirect()->back();
