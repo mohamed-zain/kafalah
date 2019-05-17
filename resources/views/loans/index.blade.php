@@ -134,40 +134,15 @@
                                         <!-- /.modal -->
                                     </div>
                                     <ul class="inbox-nav mb-30">
+                                        <li class="active">
+                                            <a href="#">كل المحافظ<span class="label label-primary ml-10">20</span></a>
+                                        </li>
                                         @foreach($loanstype as $loans)
-                                        <li class="@if($loans->id == 1) active @endif">
-                                            <a href="#">{{ $loans->Name }}<span class="label label-primary ml-10">12</span></a>
+                                        <li>
+                                            <a href="#">{{ $loans->name }}<span class="label label-primary ml-10">12</span></a>
                                         </li>
                                         @endforeach
                                     </ul>
-
-                                    <a class="txt-success create-label  pa-15" href="javascript:void(0)" data-toggle="modal" data-target="#myModal_1">اضافة نوع جديد + </a>
-                                    <div id="myModal_1" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                    <h5 class="modal-title" id="myModalLabel">اضافة جديد </h5>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <form id="addnew" action="{{ route('LoansTypes.store') }}" method="post">
-                                                        {{ csrf_field() }}
-                                                        <div class="form-group">
-                                                            <label class="control-label mb-10">اسم القطاع</label>
-                                                            <input type="text" name="Name" class="form-control" placeholder="اسم القطاع">
-                                                        </div>
-
-                                                    </form>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" form="addnew" class="btn btn-success waves-effect" id="">حفظ</button>
-                                                    <button type="reset" form="addnew" class="btn btn-default waves-effect" data-dismiss="modal">الغاء</button>
-                                                </div>
-                                            </div>
-                                            <!-- /.modal-content -->
-                                        </div>
-                                        <!-- /.modal-dialog -->
-                                    </div>
                                 </aside>
 
                                 <aside class="col-lg-10 col-md-8 pl-0">

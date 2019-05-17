@@ -17,7 +17,7 @@ class LoansController extends Controller
     public function index()
     {
         $data = Loans::join('sub_wallets','sub_wallets.id','=','loans.wallet_Id')->get();
-        $loanstype = LoansTypes::all();
+        $loanstype = SubWallet::all();
         $wallet = SubWallet::all();
         return view('loans.index',compact('data','loanstype','wallet'));
     }
