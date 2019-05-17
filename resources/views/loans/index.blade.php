@@ -226,73 +226,79 @@
         </div>
     </div>
 
+
+    <script src="{{ asset('vendors/bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('dist/js/dataTables-data.js') }}"></script>
+    <script src="{{ asset('dist/js/myjs/subwallet.js') }}"></script>
     <script>
-        $(document).ajaxStart(function () {
-            $(".spinner").show();
-        }).ajaxStop(function () {
-            $(".spinner").hide();
-        });
-        $('#searching').click(function () {
+        $(document).ready(function () {
+            $(document).ajaxStart(function () {
+                $(".spinner").show();
+            }).ajaxStop(function () {
+                $(".spinner").hide();
+            });
+            $('#searching').click(function () {
 
-            $( "#addsub" ).on( "submit", function( event ) {
+                $( "#addsub" ).on( "submit", function( event ) {
 
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+
+                    event.preventDefault();
+
+                    var data2    = $( this ).serialize();
+
+                    $.ajax({
+                        type: 'POST',
+                        url : $(this).attr('action'),
+                        data : data2 ,
+                        //dataType: 'json',
+                        cache:false,
+
+                        success  : function(data) {
+                            window.setTimeout(function(){
+                                $.toast({
+                                    heading: 'شكرا',
+                                    text: 'تم انشاء القرض بنجاح',
+                                    position: 'top-right',
+                                    loaderBg:'#f0c541',
+                                    icon: 'success',
+                                    hideAfter: 3500,
+                                    stack: 6
+                                });
+                            }, 500);
+                        },
+                        error: function(xhr, textStatus, thrownError){
+                            // console.log(thrownError);
+                            swal("للأسف!", "لم يتم حفظ البيانات!", "error");
+                        }
+
+                    });
+                    $("#addsub").trigger("reset");
+
+                });
+
+            });
+            $("#all").click(function(){
                 $.ajaxSetup({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     }
                 });
-
-                event.preventDefault();
-
-                var data2    = $( this ).serialize();
-
                 $.ajax({
-                    type: 'POST',
-                    url : $(this).attr('action'),
-                    data : data2 ,
-                    //dataType: 'json',
-                    cache:false,
+                    url: "{{ url('OrdersLists') }}",
+                    type: "GET",
+                    success: function(data){
+                        $("#here").html(data);
 
-                    success  : function(data) {
-                        window.setTimeout(function(){
-                            $.toast({
-                                heading: 'شكرا',
-                                text: 'تم انشاء القرض بنجاح',
-                                position: 'top-right',
-                                loaderBg:'#f0c541',
-                                icon: 'success',
-                                hideAfter: 3500,
-                                stack: 6
-                            });
-                        }, 500);
                     },
-                    error: function(xhr, textStatus, thrownError){
-                        // console.log(thrownError);
-                        swal("للأسف!", "لم يتم حفظ البيانات!", "error");
+                    error: function(){
+                        console.log("No results for " + data + ".");
                     }
-
                 });
-                $("#addsub").trigger("reset");
-
-            });
-
-        });
-        $("#all").click(function(){
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $.ajax({
-                url: "{{ url('OrdersLists') }}",
-                type: "GET",
-                success: function(data){
-                    $("#here").html(data);
-
-                },
-                error: function(){
-                    console.log("No results for " + data + ".");
-                }
             });
         });
         function playSound() {
@@ -300,8 +306,4 @@
             sound.play();
         }
     </script>
-    <script src="{{ asset('vendors/bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ asset('dist/js/dataTables-data.js') }}"></script>
-    <script src="{{ asset('dist/js/myjs/subwallet.js') }}"></script>
-
 @endsection
