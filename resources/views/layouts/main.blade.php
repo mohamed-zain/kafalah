@@ -530,15 +530,11 @@
 <script src="{{ asset('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 
 <!-- Data table JavaScript -->
-<script src="{{ asset('vendors/bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
 
 <!-- Slimscroll JavaScript -->
 <script src="{{ asset('dist/js/jquery.slimscroll.js') }}"></script>
 
 <!-- simpleWeather JavaScript -->
-<script src="{{ asset('vendors/bower_components/moment/min/moment.min.js') }}"></script>
-<script src="{{ asset('vendors/bower_components/simpleWeather/jquery.simpleWeather.min.js') }}"></script>
-<script src="{{ asset('dist/js/simpleweather-data.js') }}"></script>
 
 <!-- Progressbar Animation JavaScript -->
 <script src="{{ asset('vendors/bower_components/waypoints/lib/jquery.waypoints.min.js') }}"></script>

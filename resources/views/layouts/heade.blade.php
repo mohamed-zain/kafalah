@@ -13,9 +13,7 @@
 <!-- Morris Charts CSS -->
 <link href="{{ asset('vendors/bower_components/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('vendors/bower_components/morris.js/morris.css') }}" rel="stylesheet" type="text/css"/>
-<script src="{{ asset('vendors/bower_components/jquery/dist/jquery.min.js') }}"></script>
 <!-- Data table CSS -->
-<link href="{{ asset('vendors/bower_components/datatables/media/css/jquery.dataTables.min.css') }}"  rel="stylesheet" type="text/css"/>
 
 <link href="{{ asset('vendors/bower_components/jquery-toast-plugin/dist/jquery.toast.min.css') }}"  rel="stylesheet" type="text/css">
 

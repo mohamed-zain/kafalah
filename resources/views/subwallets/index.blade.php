@@ -236,7 +236,7 @@
         </div>
         <!-- /.modal-dialog -->
     </div>
-
+    <script src="{{ asset('vendors/bower_components/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ asset('vendors/bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('dist/js/dataTables-data.js') }}"></script>
     <script src="{{ asset('vendors/bower_components/select2/dist/js/select2.full.min.js') }}"></script>
