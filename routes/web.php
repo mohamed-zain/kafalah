@@ -23,6 +23,8 @@ Route::middleware(['auth'])->group(function () {
     });
     Route::resource('MainWallet', 'WalletController');
     Route::resource('SubWallet', 'SubWalletController');
+    Route::get('wallet_statistic', 'SubWalletController@statistic');
+
     Route::resource('LoansLists', 'LoansController');
 Route::resource('LoansTypes', 'LoansTypesController');
 });

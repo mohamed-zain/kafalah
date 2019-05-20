@@ -2546,7 +2546,8 @@ a#toggle_mobile_nav,
 a#toggle_mobile_search {
   color: #878787;
   position: relative;
-  line-height: 66px; }
+  line-height: 66px;
+  padding-top: 20px;}
   a.toggle-left-nav-btn i,
   a#toggle_mobile_nav i,
   a#toggle_mobile_search i {

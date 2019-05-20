@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\SubWallet;
+use App\Products;
 use Illuminate\Http\Request;
 
-class SubWalletController extends Controller
+class ProductsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,15 +14,9 @@ class SubWalletController extends Controller
      */
     public function index()
     {
-        $data = SubWallet::all();
-        return view('subwallets.index',compact('data'));
+        //
     }
 
-    public function statistic()
-    {
-        $data = SubWallet::all();
-        return view('subwallets.statistic',compact('data'));
-    }
     /**
      * Show the form for creating a new resource.
      *
@@ -41,27 +35,16 @@ class SubWalletController extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request->all();
-        $this->validate($request, [
-            'name' => 'required',
-            'financing_Ceiling' => 'required',
-            'sponsorship_Rate' => 'required',
-            'repayment_Period' => 'required',
-            'Balance' => 'required',
-            'prodects' => 'required',
-        ]);
-        \Session::flash('Flash', 'تم ارسال الطلب لادارة الجمعية');
-        SubWallet::create($input);
-        return redirect()->back();
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\SubWallet  $subWallet
+     * @param  \App\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function show(SubWallet $subWallet)
+    public function show(Products $products)
     {
         //
     }
@@ -69,10 +52,10 @@ class SubWalletController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\SubWallet  $subWallet
+     * @param  \App\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function edit(SubWallet $subWallet)
+    public function edit(Products $products)
     {
         //
     }
@@ -81,10 +64,10 @@ class SubWalletController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\SubWallet  $subWallet
+     * @param  \App\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SubWallet $subWallet)
+    public function update(Request $request, Products $products)
     {
         //
     }
@@ -92,10 +75,10 @@ class SubWalletController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\SubWallet  $subWallet
+     * @param  \App\Products  $products
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SubWallet $subWallet)
+    public function destroy(Products $products)
     {
         //
     }

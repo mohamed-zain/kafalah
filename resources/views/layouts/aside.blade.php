@@ -4,12 +4,9 @@
             <span>لوحة التحكم</span>
             <i class="zmdi zmdi-more"></i>
         </li>
-        <li>
-            <a class="active" href="javascript:void(0);" ><div class="pull-left"><i class="zmdi zmdi-landscape mr-20"></i><span class="right-nav-text">الرئيسية</span></div><div class="pull-right"></div><div class="clearfix"></div></a>
 
-        </li>
         <li>
-            <a href="javascript:void(0);" ><div class="pull-left"><i class="zmdi zmdi-shopping-basket mr-20"></i><span class="right-nav-text">واجهة المحفظة</span></div><div class="pull-right"></div><div class="clearfix"></div></a>
+            <a href="{{ url('/') }}" ><div class="pull-left"><i class="zmdi zmdi-shopping-basket mr-20"></i><span class="right-nav-text">واجهة المحفظة</span></div><div class="pull-right"></div><div class="clearfix"></div></a>
 
         </li>
         <li>
@@ -17,6 +14,9 @@
             <ul id="app_dr" class="collapse collapse-level-1">
                 <li>
                     <a href="{{ url('SubWallet') }}">قائمة المحافظ</a>
+                </li>
+                <li>
+                    <a href="{{ url('wallet_statistic') }}">احصاءات</a>
                 </li>
             </ul>
         </li>

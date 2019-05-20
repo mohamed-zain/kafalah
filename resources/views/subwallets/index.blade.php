@@ -1,6 +1,7 @@
 @extends('layouts.main')
 <script src="{{ asset('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <link href="{{ asset('vendors/bower_components/datatables/media/css/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css"/>
+<link href="{{ asset('vendors/bower_components/multiselect/css/multi-select.css') }}" rel="stylesheet" type="text/css"/>
 @section('content')
     @if(Session::has('Flash'))
         <script>
@@ -149,6 +150,16 @@
                                         <input type="number" class="form-control" name="Balance" placeholder="مخصص المحفظة">
                                     </div>
                                 </div>
+
+                                <div class="form-group">
+                                <label class="control-label mb-10">Multiple select boxes</label>
+                                <select class="selectpicker" multiple data-style="form-control btn-default btn-outline">
+                                    <option>Mustard</option>
+                                    <option>Ketchup</option>
+                                    <option>Relish</option>
+                                </select>
+                                </div>
+
                             </div>
                         </div>
 
@@ -169,6 +180,7 @@
 
 <script src="{{ asset('vendors/bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('dist/js/dataTables-data.js') }}"></script>
+    <script src="{{ asset('vendors/bower_components/multiselect/js/jquery.multi-select.js') }}"></script>
     <script src="{{ asset('dist/js/myjs/subwallet.js') }}"></script>
 
 @endsection
