@@ -564,10 +564,10 @@
 
 <!-- Switchery JavaScript -->
 <script src="{{ asset('vendors/bower_components/switchery/dist/switchery.min.js') }}"></script>
-
+@stack('scripts')
 <!-- Init JavaScript -->
 <script src="{{ asset('dist/js/init.js') }}"></script>
-@stack('scripts')
+
 </body>
 
 
