@@ -1,7 +1,6 @@
 @extends('layouts.main')
 <script src="{{ asset('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <link href="{{ asset('vendors/bower_components/select2/dist/css/select2.min.css') }}" rel="stylesheet" type="text/css"/>
-
 <link href="{{ asset('vendors/bower_components/datatables/media/css/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css"/>
 <link href="{{ asset('vendors/bower_components/multiselect/css/multi-select.css') }}" rel="stylesheet" type="text/css"/>
 @section('content')
@@ -152,10 +151,10 @@
                                         <input type="number" class="form-control" name="Balance" placeholder="مخصص المحفظة">
                                     </div>
                                 </div>
-
                                 <div class="form-group">
-                                <label class="control-label mb-10">Mul</label>
-                                    <select class="select2 select2-multiple" multiple="multiple" data-placeholder="Choose">
+                                    <label class="control-label mb-10">Single select2</label>
+                                    <select class="form-control select2">
+                                        <option>Select</option>
                                         <optgroup label="Alaskan/Hawaiian Time Zone">
                                             <option value="AK">Alaska</option>
                                             <option value="HI">Hawaii</option>
@@ -218,12 +217,8 @@
                                         </optgroup>
                                     </select>
                                 </div>
-
                             </div>
                         </div>
-
-
-
                         <button type="submit" id="Addwallet00" class="btn btn-success mr-10">انشاء</button>
                         <button type="reset" class="btn btn-default">الغاء</button>
                     </form>
