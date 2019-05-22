@@ -1,9 +1,14 @@
 @extends('layouts.main')
 @section('content')
-    <script src="{{ asset('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    @push('styles')
     <link href="{{ asset('vendors/bower_components/select2/dist/css/select2.min.css') }}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('vendors/bower_components/datatables/media/css/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('vendors/bower_components/multiselect/css/multi-select.css') }}" rel="stylesheet" type="text/css"/>
+    @endpush
+
+    @push('scripts')
+    <script src="{{ asset('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    @endpush
 
     @if(Session::has('Flash'))
         <script>
@@ -232,11 +237,13 @@
         </div>
         <!-- /.modal-dialog -->
     </div>
+
+    @push('scripts')
     <script src="{{ asset('vendors/bower_components/jquery/dist/jquery.min.js') }}"></script>
-<script src="{{ asset('vendors/bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('dist/js/dataTables-data.js') }}"></script>
+    <script src="{{ asset('vendors/bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('dist/js/dataTables-data.js') }}"></script>
     <script src="{{ asset('vendors/bower_components/select2/dist/js/select2.full.min.js') }}"></script>
     <script src="{{ asset('vendors/bower_components/multiselect/js/jquery.multi-select.js') }}"></script>
     <script src="{{ asset('dist/js/myjs/subwallet.js') }}"></script>
-
+    @endpush
 @endsection

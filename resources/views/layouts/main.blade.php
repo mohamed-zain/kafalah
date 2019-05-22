@@ -2,6 +2,7 @@
 
 <head>
     @include('layouts.heade')
+    @stack('styles')
 </head>
 
 <body>
@@ -566,6 +567,7 @@
 
 <!-- Init JavaScript -->
 <script src="{{ asset('dist/js/init.js') }}"></script>
+@stack('scripts')
 </body>
 
 
