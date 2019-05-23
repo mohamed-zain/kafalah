@@ -112,7 +112,7 @@ $(document).ready(function(){
             ],
             datasets: [
                 {
-                    data: [40939,268229,145478],
+                    data: [33333,22222,111111],
                     backgroundColor: [
                         "rgba(240,197,65,.6)",
                         "rgba(46,205,153,.6)",
