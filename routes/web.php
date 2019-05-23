@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Http\Request;
 
 
 
@@ -28,9 +29,10 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('LoansLists', 'LoansController');
     Route::resource('LoansTypes', 'LoansTypesController');
 
-Route::post('LoansListsdata', function () {
+Route::post('LoansListsdata', function (Request $request) {
     //auth::logout();
-    return "done ajax";
+    $dat = \App\SubWallet::where('id','=',$request->walletid)->first();
+    return response()->json($dat);
 });
 
 });

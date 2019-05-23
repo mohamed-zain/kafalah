@@ -14,6 +14,9 @@ $(document).ready(function(){
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+    var data1 = 0;
+    var data2 = 0;
+    var data3 = 0;
     $.ajax({
         type: 'POST',
         url : "http://version2.archi2030.com/LoansListsdata",
@@ -38,75 +41,7 @@ $(document).ready(function(){
         "bPaginate": false,
         "bInfo": false,
     });
-    if( $('#chart_2').length > 0 ){
-        var ctx2 = document.getElementById("chart_2").getContext("2d");
-        var data2 = {
-            labels: ["رصيد المحفظة", "المبالغ المصروفة", "المبالغ المحصلة"],
-            datasets: [
 
-                {
-                    label: "My Third dataset",
-                    backgroundColor: "rgba(78,157,230,.6)",
-                    borderColor: "rgba(78,157,230,.6)",
-                    data: [8, 28, 50, 29, 76, 77, 40]
-                }
-            ]
-        };
-
-        var hBar = new Chart(ctx2, {
-            type:"doughnut",
-            data:data2,
-
-            options: {
-                tooltips: {
-                    mode:"label"
-                },
-                scales: {
-                    yAxes: [{
-                        stacked: true,
-                        gridLines: {
-                            color: "rgba(135,135,135,0)",
-                        },
-                        ticks: {
-                            fontFamily: "Poppins",
-                            fontColor:"#878787"
-                        }
-                    }],
-                    xAxes: [{
-                        stacked: true,
-                        gridLines: {
-                            color: "rgba(135,135,135,0)",
-                        },
-                        ticks: {
-                            fontFamily: "Poppins",
-                            fontColor:"#878787"
-                        }
-                    }],
-
-                },
-                elements:{
-                    point: {
-                        hitRadius:40
-                    }
-                },
-                animation: {
-                    duration:	3000
-                },
-                responsive: true,
-                maintainAspectRatio:false,
-                legend: {
-                    display: false,
-                },
-
-                tooltip: {
-                    backgroundColor:'rgba(33,33,33,1)',
-                    cornerRadius:0,
-                    footerFontFamily:"'Poppins'"
-                }
-
-            }
-        });
-    }
     if( $('#chart_6').length > 0 ){
         var ctx6 = document.getElementById("chart_6").getContext("2d");
         var data6 = {
