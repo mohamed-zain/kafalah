@@ -78,11 +78,11 @@
                                     @foreach($data as $DD)
                                     <tr>
                                         <td>{{ $DD->name }}</td>
-                                        <td>{{ $DD->financing_Ceiling }} ريال</td>
+                                        <td>{{ number_format($DD->financing_Ceiling) }} ريال</td>
                                         <td>{{ $DD->sponsorship_Rate }} %</td>
                                         <td>{{ $DD->repayment_Period }} شهر</td>
-                                        <td>{{ $DD->Balance }} ريال</td>
-                                        <td>{{ $DD->totalPrice }}</td>
+                                        <td>{{ number_format($DD->Balance) }} ريال</td>
+                                        <td>{{ number_format($DD->totalPrice) }}</td>
                                         <td><a href="{{ url('wallet_statistic') }}/{{ $DD->id }}" class="text-inverse pr-10" title="" data-toggle="tooltip" data-original-title="عرض"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="javascript:void(0)" class="text-inverse" title="" data-toggle="tooltip" data-original-title="حذف"><i class="zmdi zmdi-delete txt-danger"></i></a></td>
                                     </tr>
                                         @endforeach
