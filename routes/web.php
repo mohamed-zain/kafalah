@@ -29,14 +29,15 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('LoansLists', 'LoansController');
     Route::resource('LoansTypes', 'LoansTypesController');
 
+
+
+});
+
 Route::post('LoansListsdata', function (Request $request) {
     //auth::logout();
     $dat = \App\SubWallet::where('id','=',$request->walletid)->first();
     return response()->json($dat);
 });
-
-});
-
 
 Route::get('logout', function () {
     auth::logout();
