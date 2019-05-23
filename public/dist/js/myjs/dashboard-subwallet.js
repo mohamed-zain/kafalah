@@ -26,6 +26,7 @@ $(document).ready(function(){
 
         success  : function(data) {
            console.log(data);
+           data1 = data.totalPrice;
         },
         error: function(xhr, textStatus, thrownError){
              console.log(thrownError);
@@ -52,7 +53,7 @@ $(document).ready(function(){
             ],
             datasets: [
                 {
-                    data: [33333,22222,111111],
+                    data: [data1,22222,111111],
                     backgroundColor: [
                         "rgba(240,197,65,.6)",
                         "rgba(46,205,153,.6)",
