@@ -14,7 +14,6 @@ $(document).ready(function(){
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-    var data1 = 0;
     var data2 = 0;
     var data3 = 0;
     $.ajax({
@@ -26,7 +25,7 @@ $(document).ready(function(){
 
         success  : function(data) {
            console.log(data);
-           data1 = data.totalPrice;
+            var data1 = data.totalPrice;
         },
         error: function(xhr, textStatus, thrownError){
              console.log(thrownError);
