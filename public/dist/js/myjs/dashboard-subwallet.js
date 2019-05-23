@@ -9,6 +9,11 @@
 
 $(document).ready(function(){
     /*****get wallet data*****/
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
     $.ajax({
         type: 'POST',
         url : "http://version2.archi2030.com/LoansListsdata",
