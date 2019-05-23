@@ -26,7 +26,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('wallet_statistic/{id}', 'SubWalletController@statistic');
 
     Route::resource('LoansLists', 'LoansController');
-Route::resource('LoansTypes', 'LoansTypesController');
+    Route::resource('LoansTypes', 'LoansTypesController');
+
+Route::post('LoansListsdata', function () {
+    //auth::logout();
+    return "done ajax";
+});
+
 });
 
 

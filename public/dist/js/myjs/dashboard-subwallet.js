@@ -6,7 +6,27 @@
 "use strict";
 
 /*****Ready function start*****/
+
 $(document).ready(function(){
+    /*****get wallet data*****/
+    $.ajax({
+        type: 'POST',
+        url : "http://version2.archi2030.com/LoansListsdata",
+        data :  { walletid: 1 },
+        //dataType: 'json',
+        cache:false,
+
+        success  : function(data) {
+           console.log(data);
+        },
+        error: function(xhr, textStatus, thrownError){
+             console.log(thrownError);
+        }
+
+    });
+    /*****get wallet data*****/
+
+
     $('#statement').DataTable({
         "bFilter": false,
         "bLengthChange": false,
