@@ -15,5 +15,6 @@ class SubWallet extends Model
         'repayment_Period',
         'Balance',
         'prodects',
+        'totalPrice'
     ];
 }

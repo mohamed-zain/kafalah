@@ -18,9 +18,9 @@ class SubWalletController extends Controller
         return view('subwallets.index',compact('data'));
     }
 
-    public function statistic()
+    public function statistic($id)
     {
-        $data = SubWallet::all();
+        $data = SubWallet::where('id','=',$id)->first();
         return view('subwallets.statistic',compact('data'));
     }
     /**

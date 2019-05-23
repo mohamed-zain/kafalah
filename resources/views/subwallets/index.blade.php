@@ -59,7 +59,8 @@
                                         <th>نسبة الكفالة</th>
                                         <th>مده السداد</th>
                                         <th>مخصص المحفظة</th>
-                                        <th>القطاع</th>
+                                        <th> مبلغ المحفظة الكلي</th>
+                                        <th>خيارات</th>
                                     </tr>
                                     </thead>
                                     <tfoot>
@@ -69,7 +70,8 @@
                                         <th>نسبة الكفالة</th>
                                         <th>مده السداد</th>
                                         <th>مخصص المحفظة</th>
-                                        <th>القطاع</th>
+                                        <th> مبلغ المحفظة الكلي</th>
+                                        <th>خيارات</th>
                                     </tr>
                                     </tfoot>
                                     <tbody>
@@ -80,8 +82,8 @@
                                         <td>{{ $DD->sponsorship_Rate }} %</td>
                                         <td>{{ $DD->repayment_Period }} شهر</td>
                                         <td>{{ $DD->Balance }} ريال</td>
-                                        <td>{{ $DD->prodects }}</td>
-
+                                        <td>{{ $DD->totalPrice }}</td>
+                                        <td><a href="{{ url('wallet_statistic') }}/{{ $DD->id }}" class="text-inverse pr-10" title="" data-toggle="tooltip" data-original-title="عرض"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="javascript:void(0)" class="text-inverse" title="" data-toggle="tooltip" data-original-title="حذف"><i class="zmdi zmdi-delete txt-danger"></i></a></td>
                                     </tr>
                                         @endforeach
                                     </tbody>
@@ -153,6 +155,13 @@
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="icon-envelope-open"></i></div>
                                         <input type="number" class="form-control" name="Balance" placeholder="مخصص المحفظة">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label mb-10" for="Balance"> مبلغ المحفظة الكلي</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="icon-envelope-open"></i></div>
+                                        <input type="number" class="form-control" name="totalPrice" placeholder="مبلغ المحفظة الكلي">
                                     </div>
                                 </div>
                             </div>
