@@ -14,7 +14,9 @@ class WalletController extends Controller
      */
     public function index()
     {
-        return view('wallets.index');
+        $data = SubWallet::all();
+        $wallet = Wallet::first();
+        return view('wallets.index',compact('data','wallet'));
     }
 
     /**
