@@ -40,7 +40,7 @@
                 <div class="panel-heading">
                     <div class="pull-left">
                         <div class="pull-left user-img-wrap mr-15">
-                            <img class="card-user-img img-circle pull-left" src="../img/user.png" alt="user">
+                            <img class="card-user-img img-circle pull-left" src="{{ asset('fundlogo.png') }}" alt="user">
                         </div>
                         <div class="pull-left user-detail-wrap">
 											<span class="block card-user-name">
