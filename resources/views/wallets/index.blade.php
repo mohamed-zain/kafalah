@@ -63,19 +63,19 @@
                         <div class="user-others-details pl-15 pr-15">
                             <div class="mb-15">
                                 <i class="zmdi zmdi-email-open inline-block mr-10"></i>
-                                <span class="inline-block txt-dark">المبلغ الكلي - {{ number_format($wallet->Balance) }}</span>
+                                <span class="inline-block txt-dark">المبلغ الكلي - {{ number_format($wallet->Balance) }}</span> ريال
                             </div>
                             <div class="mb-15">
                                 <i class="zmdi zmdi-smartphone inline-block mr-10"></i>
-                                <span class="inline-block txt-dark">المبلغ المخصص - {{ number_format($wallet->Custom) }}</span>
+                                <span class="inline-block txt-dark">المبلغ المخصص - {{ number_format($wallet->Custom) }}</span> ريال
                             </div>
                             <div class="mb-15">
                                 <i class="zmdi zmdi-phone inline-block mr-10"></i>
-                                <span class="inline-block txt-dark">المبلغ غير المخصص - {{ number_format($wallet->not_Customized) }}</span>
+                                <span class="inline-block txt-dark">المبلغ غير المخصص - {{ number_format($wallet->not_Customized) }}</span> ريال
                             </div>
                             <div>
                                 <i class="zmdi zmdi zmdi-skype inline-block mr-10"></i>
-                                <span class="inline-block txt-dark"> نسبة الكفالة - {{ number_format($wallet->sponsorship_Rate) }}</span>
+                                <span class="inline-block txt-dark"> نسبة الكفالة - {{ number_format($wallet->sponsorship_Rate) }} </span> %
                             </div>
                         </div>
                         <hr class="light-grey-hr mt-20 mb-20">
