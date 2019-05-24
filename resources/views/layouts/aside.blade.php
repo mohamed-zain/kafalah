@@ -5,7 +5,7 @@
             <i class="zmdi zmdi-more"></i>
         </li>
         <li>
-            <a href="{{ url('/') }}" ><div class="pull-left"><i class="zmdi zmdi-shopping-basket mr-20"></i><span class="right-nav-text">الرئيسية</span></div><div class="pull-right"></div><div class="clearfix"></div></a>
+            <a class="active" href="{{ url('/') }}" ><div class="pull-left"><i class="zmdi zmdi-shopping-basket mr-20"></i><span class="right-nav-text">الرئيسية</span></div><div class="pull-right"></div><div class="clearfix"></div></a>
         </li>
         <li>
             <a href="{{ url('MainWallet') }}" ><div class="pull-left"><i class="zmdi zmdi-shopping-basket mr-20"></i><span class="right-nav-text">المحفظة الرئيسية</span></div><div class="pull-right"></div><div class="clearfix"></div></a>
