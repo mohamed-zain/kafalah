@@ -107,12 +107,6 @@
 
         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
             <div class="panel panel-default card-view">
-                <div class="panel-heading">
-                    <div class="pull-left">
-                        <button class="btn  btn-success btn-outline btn-rounded" data-toggle="modal" data-target="#myModal">انشاء محفظة جديدة</button>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
                 <div class="panel-wrapper collapse in">
                     <div class="panel-body">
                         <div class="table-wrap">
