@@ -70,9 +70,13 @@ class WalletController extends Controller
      * @param  \App\Wallet  $wallet
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Wallet $wallet)
+    public function update(Request $request, Wallet $wallet,$id)
     {
-        //
+        //dd($request->all());
+        $input=  $request->except('_method','_token');
+        Wallet::where('id','=',$id)->update($input);
+        \Session::flash('Flash', 'تم تعديل البيانات ');
+        return redirect('MainWallet');
     }
 
     /**

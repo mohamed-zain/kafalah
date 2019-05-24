@@ -8,7 +8,7 @@
             window.setTimeout(function(){
                 $.toast({
                     heading: 'شكرا',
-                    text: 'تم انشاء المحفظة الفرعية بنجاح',
+                    text: 'تم تعديل بيانات المحفظة الرئيسية بنجاح',
                     position: 'top-right',
                     loaderBg:'#f0c541',
                     icon: 'success',
@@ -52,7 +52,7 @@
                         </div>
                     </div>
                     <div class="pull-right">
-                        <a class="pull-left inline-block mr-15" href="#">
+                        <a class="pull-left inline-block mr-15" href="#"  data-toggle="modal" data-target="#myModal">
                             <i class="zmdi zmdi-edit txt-light"></i>
                         </a>
                     </div>
@@ -140,6 +140,66 @@
             </div>
         </div>
     </div>
+    <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h5 class="modal-title" id="myModalLabel">تعديل بيانات المحفظة الرئيسية</h5>
+                </div>
+                <div class="modal-body">
+                    <h5 class="mb-15">كل الحقول مطلوبة</h5>
+                    <form id="Appintsend" action="{{ route('MainWallet.update',$wallet->id) }}" method="post">
+                        {{ csrf_field() }}
+                        {{ method_field('PUT') }}
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label class="control-label mb-10" for="financing_Ceiling">المبلغ الكلي</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="icon-envelope-open"></i></div>
+                                        <input type="text" class="form-control" name="Balance" value="{{ $wallet->Balance }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label class="control-label mb-10" for="sponsorship_Rate">المبلغ المخصص</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="icon-lock"></i></div>
+                                        <input type="number" class="form-control" name="Custom" value="{{ $wallet->Custom }}">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label mb-10" for="repayment_Period"> المبلغ غير المخصص</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="icon-lock"></i></div>
+                                        <input type="text" class="form-control" name="not_Customized" value="{{ $wallet->not_Customized }}">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label mb-10" for="Balance"> نسبة الكفالة</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="icon-envelope-open"></i></div>
+                                        <input type="number" class="form-control" name="sponsorship_Rate" value="{{ $wallet->sponsorship_Rate }}">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <button type="submit" id="Addwallet00" class="btn btn-success mr-10">تعديل</button>
+                        <button type="reset" class="btn btn-default">الغاء</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
     <script src="{{ asset('vendors/bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('dist/js/dataTables-data.js') }}"></script>
     <script src="{{ asset('dist/js/myjs/subwallet.js') }}"></script>
