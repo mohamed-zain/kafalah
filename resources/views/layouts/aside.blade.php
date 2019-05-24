@@ -16,9 +16,6 @@
                 <li>
                     <a href="{{ url('SubWallet') }}">قائمة المحافظ</a>
                 </li>
-                <li>
-                    <a href="{{ url('wallet_statistic') }}">احصاءات</a>
-                </li>
             </ul>
         </li>
         <li>
