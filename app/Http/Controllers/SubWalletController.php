@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\LoansTypes;
+use App\SubProducts;
 use App\SubWallet;
 use Illuminate\Http\Request;
 
@@ -15,7 +17,9 @@ class SubWalletController extends Controller
     public function index()
     {
         $data = SubWallet::all();
-        return view('subwallets.index',compact('data'));
+        $loan = LoansTypes::all();
+
+        return view('subwallets.index',compact('data','loan'));
     }
 
     public function statistic($id)
@@ -50,7 +54,7 @@ class SubWalletController extends Controller
             'Balance' => 'required',
             'prodects' => 'required',
         ]);
-        \Session::flash('Flash', 'تم ارسال الطلب لادارة الجمعية');
+        \Session::flash('Flash', 'تم انشاء المحفظة بنجاح');
         SubWallet::create($input);
         return redirect()->back();
     }
@@ -84,9 +88,12 @@ class SubWalletController extends Controller
      * @param  \App\SubWallet  $subWallet
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SubWallet $subWallet)
+    public function update(Request $request, SubWallet $subWallet,$id)
     {
-        //
+        $input=  $request->except('_method','_token');
+        SubWallet::where('id','=',$id)->update($input);
+        \Session::flash('Flash', 'تم تعديل البيانات ');
+        return redirect('SubWallet');
     }
 
     /**
