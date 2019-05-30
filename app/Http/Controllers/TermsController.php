@@ -41,7 +41,7 @@ class TermsController extends Controller
             'Term' => 'required',
 
         ]);
-        \Session::flash('Flash', 'تم انشاء المحفظة بنجاح');
+        \Session::flash('Flash', 'تم اضافة الشرط بنجاح');
         Terms::create($input);
         return redirect()->back();
     }

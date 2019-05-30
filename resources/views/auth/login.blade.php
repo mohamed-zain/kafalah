@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>{{ config('app.name', 'برنامج كفالة') }}</title>
+    <title>برنامج كفالة - تسجيل الدخول</title>
     <meta name="description" content="برنامج كفالة لدعم المستفيدين" />
     <meta name="keywords" content="كفالة" />
     <meta name="author" content="AamalOrg"/>
