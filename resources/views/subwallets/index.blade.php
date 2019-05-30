@@ -83,9 +83,12 @@
                                         <td>{{ $DD->repayment_Period }} شهر</td>
                                         <td>{{ number_format($DD->Balance) }} ريال</td>
                                         <td>{{ number_format($DD->totalPrice) }}</td>
-                                        <td><a href="{{ url('wallet_statistic') }}/{{ $DD->id }}" class="text-inverse pr-10" title="" data-toggle="tooltip" data-original-title="عرض"><i class="fa fa-check-square-o txt-warning"></i></a>
+                                        <td>
+                                            <a href="{{ url('wallet_statistic') }}/{{ $DD->id }}" class="text-inverse pr-10" title="" data-toggle="tooltip" data-original-title="عرض"><i class="fa fa-check-square-o txt-warning"></i></a>
                                             <a href="javascript:void(0)" class="text-inverse pr-10" title=""  data-toggle="modal" data-target="#{{ $DD->id }}" data-original-title="تعديل"><i class="zmdi zmdi-edit txt-danger"></i></a>
-                                            <a href="javascript:void(0)" class="text-inverse" title=""  data-toggle="modal" data-target="#{{ $DD->id }}route" data-original-title="المسارات"><i class="fa fa-plus-square txt-primary"></i></a>
+                                            <a href="javascript:void(0)" class="text-inverse pr-10  " title=""  data-toggle="modal" data-target="#{{ $DD->id }}route" data-original-title="المسارات"><i class="fa fa-plus-square txt-primary"></i></a>
+                                            <a href="{{ url('wallet_terms') }}/{{ $DD->id }}" class="text-inverse pr-10" title="" data-toggle="tooltip" data-original-title="الشروط والاحكام"><i class="fa fa-bookmark txt-danger"></i></a>
+
                                         </td>
                                     </tr>
                                     <div id="{{ $DD->id }}route" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

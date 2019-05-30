@@ -20,11 +20,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/', function () {
-        return view('index');
+        $widget = App\Wallet::first();
+        return view('index',compact('widget'));
     });
     Route::resource('MainWallet', 'WalletController');
     Route::resource('SubWallet', 'SubWalletController');
+    Route::resource('Terms', 'TermsController');
     Route::get('wallet_statistic/{id}', 'SubWalletController@statistic');
+    Route::get('wallet_terms/{id}', 'SubWalletController@terms');
 
     Route::resource('LoansLists', 'LoansController');
     Route::resource('LoansTypes', 'LoansTypesController');

@@ -542,7 +542,7 @@
 									<div class="container-fluid">
 										<div class="row">
 											<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
-												<span class="txt-dark block counter"><span class="counter-anim">914,001</span></span>
+												<span class="txt-dark block counter"><span class="counter-anim">{{ number_format($widget->Balance) }}</span></span>
 												<span class="weight-500 uppercase-font block font-13">رصيد المحفظة الافتتاحي</span>
 											</div>
 											<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
@@ -669,7 +669,7 @@
 								<div class="label-chatrs">
 									<div class="">
 										<span class="clabels clabels-lg inline-block bg-yellow mr-10 pull-left"></span>
-										<span class="clabels-text font-12 inline-block txt-dark capitalize-font pull-left"><span class="block font-15 weight-500 mb-5">رصيد المحفظة</span><span class="block txt-grey">40939 ريال</span></span>
+										<span class="clabels-text font-12 inline-block txt-dark capitalize-font pull-left"><span class="block font-15 weight-500 mb-5">رصيد المحفظة</span><span class="block txt-grey">{{ number_format($widget->not_Customized) }} ريال</span></span>
 										<div id="sparkline_3" class="pull-right" style="width: 100px; overflow: hidden; margin: 0px auto;"></div>
 										<div class="clearfix"></div>
 									</div>

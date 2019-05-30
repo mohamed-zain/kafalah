@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\LoansTypes;
-use App\SubProducts;
-use App\SubWallet;
 use App\Terms;
 use Illuminate\Http\Request;
 
-class SubWalletController extends Controller
+class TermsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,22 +14,9 @@ class SubWalletController extends Controller
      */
     public function index()
     {
-        $data = SubWallet::all();
-        $loan = LoansTypes::all();
-
-        return view('subwallets.index',compact('data','loan'));
+        //
     }
 
-    public function statistic($id)
-    {
-        $data = SubWallet::where('id','=',$id)->first();
-        return view('subwallets.statistic',compact('data'));
-    }
-    public function terms($id)
-    {
-        $data = Terms::where('SubID','=',$id)->get();
-        return view('subwallets.terms',compact('data','id'));
-    }
     /**
      * Show the form for creating a new resource.
      *
@@ -52,26 +36,23 @@ class SubWalletController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
+       // dd($input);
         $this->validate($request, [
-            'name' => 'required',
-            'financing_Ceiling' => 'required',
-            'sponsorship_Rate' => 'required',
-            'repayment_Period' => 'required',
-            'Balance' => 'required',
-            'prodects' => 'required',
+            'Term' => 'required',
+
         ]);
         \Session::flash('Flash', 'تم انشاء المحفظة بنجاح');
-        SubWallet::create($input);
+        Terms::create($input);
         return redirect()->back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\SubWallet  $subWallet
+     * @param  \App\Terms  $terms
      * @return \Illuminate\Http\Response
      */
-    public function show(SubWallet $subWallet)
+    public function show(Terms $terms)
     {
         //
     }
@@ -79,10 +60,10 @@ class SubWalletController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\SubWallet  $subWallet
+     * @param  \App\Terms  $terms
      * @return \Illuminate\Http\Response
      */
-    public function edit(SubWallet $subWallet)
+    public function edit(Terms $terms)
     {
         //
     }
@@ -91,24 +72,24 @@ class SubWalletController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\SubWallet  $subWallet
+     * @param  \App\Terms  $terms
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SubWallet $subWallet,$id)
+    public function update(Request $request, Terms $terms,$id)
     {
         $input=  $request->except('_method','_token');
-        SubWallet::where('id','=',$id)->update($input);
+        Terms::where('id','=',$id)->update($input);
         \Session::flash('Flash', 'تم تعديل البيانات ');
-        return redirect('SubWallet');
+        return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\SubWallet  $subWallet
+     * @param  \App\Terms  $terms
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SubWallet $subWallet)
+    public function destroy(Terms $terms)
     {
         //
     }
