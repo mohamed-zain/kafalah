@@ -36,7 +36,7 @@
 
     <div class="row">
         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-            <div class="panel panel-danger contact-card card-view">
+            <div class="panel panel-success contact-card card-view">
                 <div class="panel-heading">
                     <div class="pull-left">
                         <div class="pull-left user-img-wrap mr-15">
