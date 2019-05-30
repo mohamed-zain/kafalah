@@ -139,7 +139,7 @@
                                         </li>
                                         @foreach($loanstype as $loans)
                                         <li>
-                                            <a href="{{ url('LoansTypesByType') }}/{{ $loans->name }}">{{ $loans->name }}<span class="label label-primary ml-10">12</span></a>
+                                            <a href="{{ url('LoansTypesByType') }}/{{ $loans->id }}">{{ $loans->name }}<span class="label label-primary ml-10">12</span></a>
                                         </li>
                                         @endforeach
                                     </ul>
