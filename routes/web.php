@@ -31,6 +31,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('LoansLists', 'LoansController');
     Route::resource('LoansTypes', 'LoansTypesController');
+    Route::get('LoansTypesByType/{id}', 'LoansController@lists');
     Route::resource('SubProducts', 'SubProductsController');
 
 

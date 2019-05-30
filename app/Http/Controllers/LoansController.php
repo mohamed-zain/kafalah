@@ -21,7 +21,15 @@ class LoansController extends Controller
         $wallet = SubWallet::all();
         return view('loans.index',compact('data','loanstype','wallet'));
     }
-
+    public function lists($id)
+    {
+        $data = Loans::join('sub_wallets','sub_wallets.id','=','loans.wallet_Id')
+            ->where('loans.wallet_Id','=',$id)
+            ->get();
+        $loanstype = SubWallet::all();
+        $wallet = SubWallet::all();
+        return view('loans.index',compact('data','loanstype','wallet'));
+    }
     /**
      * Show the form for creating a new resource.
      *
