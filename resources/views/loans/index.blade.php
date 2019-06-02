@@ -274,6 +274,11 @@
                                                                                                             <div class="clearfix"></div>
 
                                                                                                             <hr class="light-grey-hr row mt-10 mb-10">
+                                                                                                            <span class="pull-left inline-block capitalize-font txt-dark"> المدينة</span>
+                                                                                                            <span class="label label-danger pull-right">السليمانية</span>
+                                                                                                            <div class="clearfix"></div>
+
+                                                                                                            <hr class="light-grey-hr row mt-10 mb-10">
                                                                                                             <span class="pull-left inline-block capitalize-font txt-dark">اسم الكفيل</span>
                                                                                                             <span class="label label-success pull-right">محمد احمد</span>
                                                                                                             <div class="clearfix"></div>
