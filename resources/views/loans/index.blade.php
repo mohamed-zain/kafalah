@@ -120,6 +120,23 @@
                                                                 <input type="number" class="form-control" placeholder="عدد الاقساط" name="installmentsNum">
                                                             </div>
 
+                                                            <div class="col-md-6 mb-20">
+                                                                <label>اسم الكفيل</label>
+                                                                <input type="text" class="form-control" placeholder="اسم الكفيل" name="KfeelName">
+                                                            </div>
+                                                            <div class="col-md-6 mb-20">
+                                                                <label> الفرع المشرف</label>
+                                                                <input type="text" class="form-control" placeholder="الفرع المشرف" name="Branch">
+                                                            </div>
+                                                            <div class="col-md-6 mb-20">
+                                                                <label>حالة القرض</label>
+                                                                <input type="text" class="form-control" placeholder="حالة القرض" name="LoanStatus">
+                                                            </div>
+                                                            <div class="col-md-6 mb-20">
+                                                                <label>رقم الحفظ</label>
+                                                                <input type="number" class="form-control" placeholder="رقم الحفظ" name="SaveNo">
+                                                            </div>
+
                                                         </form>
                                                     </div>
                                                     <div class="modal-footer">
@@ -144,55 +161,77 @@
                                         @endforeach
                                     </ul>
                                 </aside>
-
-                                <aside class="col-lg-10 col-md-8 pl-0">
-                                    <div class="panel pa-0">
+                                <div class="col-lg-10 col-md-10 col-sm-4 col-xs-12">
+                                    <div class="panel panel-success card-view">
+                                        <div class="panel-heading">
+                                            <div class="pull-left">
+                                                <h6 class="panel-title txt-light">قائمة القروض</h6>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
                                         <div class="panel-wrapper collapse in">
-                                            <div class="panel-body  pa-0">
-                                                <div class="table-responsive mb-30">
-                                                    <table id="datable_1" class="table  display table-hover mb-30" data-page-size="10">
-                                                        <thead>
-                                                        <tr>
-                                                            <th>No</th>
-                                                            <th>الاسم</th>
-                                                            <th>المحفظة</th>
-                                                            <th>الجنس</th>
-                                                            <th>العمر</th>
-                                                            <th>رقم الهوية</th>
-                                                            <th>رقم الجوال</th>
-                                                            <th>مبلغ القرض</th>
-                                                            <th>عدد الاقساط</th>
-                                                            <th>اجراء</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        @foreach($data as $item)
-                                                        <tr>
-                                                            <td>{{ $item->loanId }}</td>
-                                                            <td><a href="#">{{ $item->agentName }}</a></td>
-                                                            <td>{{ $item->name }}</td>
-                                                            <td>
-                                                                @if($item->Gender == 'ذكر')
-                                                                    <span class="label label-danger">ذكر</span>
-                                                                @else
-                                                                    <span class="label label-info">انثي</span>
-                                                                @endif
-                                                            </td>
-                                                            <td>{{ $item->age }}</td>
-                                                            <td>{{ $item->identityNo }}</td>
-                                                            <td>{{ $item->phoneNo }}</td>
-                                                            <td>{{ $item->loanAmount }}</td>
-                                                            <td>{{ $item->installmentsNum }}</td>
-                                                            <td><a href="javascript:void(0)" class="text-inverse pr-10" title="تعديل" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="javascript:void(0)" class="text-inverse" title="حذف" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger"></i></a></td>
-                                                        </tr>
-                                                        @endforeach
-                                                        </tbody>
-                                                    </table>
-                                                </div>
+                                            <div class="panel-body">
+                                                <aside class="col-lg-12 col-md-12 pl-0">
+                                                    <div class="panel pa-0">
+                                                        <div class="panel-wrapper collapse in">
+                                                            <div class="panel-body  pa-0">
+                                                                <div class="table-responsive mb-30">
+                                                                    <table id="datable_1" class="table  display table-hover mb-30" data-page-size="10">
+                                                                        <thead>
+                                                                        <tr>
+                                                                            <th>No</th>
+                                                                            <th>الاسم</th>
+                                                                            <th>المحفظة</th>
+                                                                            <th>الجنس</th>
+                                                                            <th>العمر</th>
+                                                                            <th>رقم الهوية</th>
+                                                                            <th>رقم الجوال</th>
+                                                                            <th>مبلغ القرض</th>
+                                                                            <th>عدد الاقساط</th>
+                                                                            <th>اسم الكفيل</th>
+                                                                            <th>الفرع المشرف</th>
+                                                                            <th>حالة القرض</th>
+                                                                            <th>رقم الحفظ</th>
+                                                                            <th>اجراء</th>
+                                                                        </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                        @foreach($data as $item)
+                                                                            <tr>
+                                                                                <td>{{ $item->loanId }}</td>
+                                                                                <td><a href="#">{{ $item->agentName }}</a></td>
+                                                                                <td>{{ $item->name }}</td>
+                                                                                <td>
+                                                                                    @if($item->Gender == 'ذكر')
+                                                                                        <span class="label label-danger">ذكر</span>
+                                                                                    @else
+                                                                                        <span class="label label-info">انثي</span>
+                                                                                    @endif
+                                                                                </td>
+                                                                                <td>{{ $item->age }}</td>
+                                                                                <td>{{ $item->identityNo }}</td>
+                                                                                <td>{{ $item->phoneNo }}</td>
+                                                                                <td>{{ $item->loanAmount }}</td>
+                                                                                <td>{{ $item->installmentsNum }}</td>
+                                                                                <td>{{ $item->KfeelName }}</td>
+                                                                                <td>{{ $item->Branch }}</td>
+                                                                                <td>{{ $item->LoanStatus }}</td>
+                                                                                <td>{{ $item->SaveNo }}</td>
+                                                                                <td><a href="javascript:void(0)" class="text-inverse pr-10" title="تعديل" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="javascript:void(0)" class="text-inverse" title="حذف" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger"></i></a></td>
+                                                                            </tr>
+                                                                        @endforeach
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </aside>
                                             </div>
                                         </div>
                                     </div>
-                                </aside>
+                                </div>
+
                             </div>
                         </div>
                     </div>

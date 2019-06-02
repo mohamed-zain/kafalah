@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\SubWallet;
 use App\Terms;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,8 @@ class TermsController extends Controller
      */
     public function index()
     {
-        //
+        $sub = SubWallet::all();
+        return view('terms.index', compact('sub'));
     }
 
     /**

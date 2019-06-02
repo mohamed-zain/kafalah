@@ -18,5 +18,9 @@ class Loans extends Model
         'loanType',
         'loanAmount',
         'installmentsNum',
+        'KfeelName',
+        'Branch',
+        'LoanStatus',
+        'SaveNo',
     ];
 }

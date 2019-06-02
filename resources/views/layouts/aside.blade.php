@@ -16,6 +16,9 @@
                 <li>
                     <a href="{{ url('SubWallet') }}">قائمة المحافظ</a>
                 </li>
+                <li>
+                    <a href="{{ url('Terms') }}">الشروط والاحكام</a>
+                </li>
             </ul>
         </li>
         <li>

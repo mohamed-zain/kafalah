@@ -89,56 +89,68 @@
                 </div>
             </div>
         </div>
-
         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-            <div class="panel panel-default card-view">
+            <div class="panel panel-success card-view">
+                <div class="panel-heading">
+                    <div class="pull-left">
+                        <h6 class="panel-title txt-light">المحافظ الفرعية</h6>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
                 <div class="panel-wrapper collapse in">
                     <div class="panel-body">
-                        <div class="table-wrap">
-                            <div class="table-responsive">
-                                <table id="datable_1" class="table table-hover display  pb-30" >
-                                    <thead>
-                                    <tr>
-                                        <th>اسم المحفظة</th>
-                                        <th>سقف التمويل</th>
-                                        <th>نسبة الكفالة</th>
-                                        <th>مده السداد</th>
-                                        <th>مخصص المحفظة</th>
-                                        <th> مبلغ المحفظة الكلي</th>
-                                        <th>خيارات</th>
-                                    </tr>
-                                    </thead>
-                                    <tfoot>
-                                    <tr>
-                                        <th>اسم المحفظة</th>
-                                        <th>سقف التمويل</th>
-                                        <th>نسبة الكفالة</th>
-                                        <th>مده السداد</th>
-                                        <th>مخصص المحفظة</th>
-                                        <th> مبلغ المحفظة الكلي</th>
-                                        <th>خيارات</th>
-                                    </tr>
-                                    </tfoot>
-                                    <tbody>
-                                    @foreach($data as $DD)
-                                        <tr>
-                                            <td>{{ $DD->name }}</td>
-                                            <td>{{ number_format($DD->financing_Ceiling) }} ريال</td>
-                                            <td>{{ $DD->sponsorship_Rate }} %</td>
-                                            <td>{{ $DD->repayment_Period }} شهر</td>
-                                            <td>{{ number_format($DD->Balance) }} ريال</td>
-                                            <td>{{ number_format($DD->totalPrice) }}</td>
-                                            <td><a href="{{ url('wallet_statistic') }}/{{ $DD->id }}" class="text-inverse pr-10" title="" data-toggle="tooltip" data-original-title="عرض"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="javascript:void(0)" class="text-inverse" title="" data-toggle="tooltip" data-original-title="حذف"><i class="zmdi zmdi-delete txt-danger"></i></a></td>
-                                        </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
+
+                        <div class="panel panel-default card-view">
+                            <div class="panel-wrapper collapse in">
+                                <div class="panel-body">
+                                    <div class="table-wrap">
+                                        <div class="table-responsive">
+                                            <table id="datable_1" class="table table-hover display  pb-30" >
+                                                <thead>
+                                                <tr>
+                                                    <th>اسم المحفظة</th>
+                                                    <th>سقف التمويل</th>
+                                                    <th>نسبة الكفالة</th>
+                                                    <th>مده السداد</th>
+                                                    <th>مخصص المحفظة</th>
+                                                    <th> مبلغ المحفظة الكلي</th>
+                                                    <th>خيارات</th>
+                                                </tr>
+                                                </thead>
+                                                <tfoot>
+                                                <tr>
+                                                    <th>اسم المحفظة</th>
+                                                    <th>سقف التمويل</th>
+                                                    <th>نسبة الكفالة</th>
+                                                    <th>مده السداد</th>
+                                                    <th>مخصص المحفظة</th>
+                                                    <th> مبلغ المحفظة الكلي</th>
+                                                    <th>خيارات</th>
+                                                </tr>
+                                                </tfoot>
+                                                <tbody>
+                                                @foreach($data as $DD)
+                                                    <tr>
+                                                        <td>{{ $DD->name }}</td>
+                                                        <td>{{ number_format($DD->financing_Ceiling) }} ريال</td>
+                                                        <td>{{ $DD->sponsorship_Rate }} %</td>
+                                                        <td>{{ $DD->repayment_Period }} شهر</td>
+                                                        <td>{{ number_format($DD->Balance) }} ريال</td>
+                                                        <td>{{ number_format($DD->totalPrice) }}</td>
+                                                        <td><a href="{{ url('wallet_statistic') }}/{{ $DD->id }}" class="text-inverse pr-10" title="" data-toggle="tooltip" data-original-title="عرض"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="javascript:void(0)" class="text-inverse" title="" data-toggle="tooltip" data-original-title="حذف"><i class="zmdi zmdi-delete txt-danger"></i></a></td>
+                                                    </tr>
+                                                @endforeach
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        </div>                    </div>
                 </div>
             </div>
         </div>
+
     </div>
     <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
