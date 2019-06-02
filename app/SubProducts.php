@@ -10,5 +10,7 @@ class SubProducts extends Model
     protected $fillable = [
         'SubID',
         'LoantypeID',
+        'LoanCount',
+        'Balance'
     ];
 }

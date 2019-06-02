@@ -37,9 +37,12 @@ class SubProductsController extends Controller
     {
 
         $input=  $request->except('_token');
+        dd($input);
         $this->validate($request, [
             'SubID' => 'required',
             'LoantypeID' => 'required',
+            'Balance' => 'required',
+            'LoanCount' => 'required',
         ]);
         $c = SubProducts::where('SubID','=',$request->SubID)
             ->where('LoantypeID','=',$request->LoantypeID)

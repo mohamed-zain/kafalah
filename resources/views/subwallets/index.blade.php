@@ -139,6 +139,8 @@
                                                                                                         <li class="todo-item">
                                                                                                             <div class="checkbox checkbox-default">
                                                                                                                 <label for="checkbox001">{{ $product->Name }}</label>
+                                                                                                                <span class="pull-left">{{ $product->LoanCount }}</span>
+                                                                                                                <span class="pull-left">{{ $product->Balance }}</span>
                                                                                                             </div>
                                                                                                         </li>
                                                                                                         <li>
@@ -150,23 +152,32 @@
                                                                                             <!-- /Todo-List -->
 
                                                                                             <!-- New Todo -->
-                                                                                            <div class="new-todo">
-                                                                                                <div class="input-group">
-                                                                                                    <form id="newform" method="post" action="{{ route('SubProducts.store') }}">
-                                                                                                        {{ csrf_field() }}
-                                                                                                        <input type="hidden" name="SubID" value="{{ $DD->id }}">
-                                                                                                        <select  id="add_todo" name="LoantypeID" class="form-control">
-                                                                                                            @foreach($loan as $loans)
-                                                                                                                <option value="{{ $loans->id }}">{{ $loans->Name }}</option>
-                                                                                                            @endforeach
-                                                                                                        </select>
-                                                                                                    </form>
+                                                                                            <div class="new">
 
 
                                                                                                 </div>
-                                                                                            </div>
                                                                                             <!-- /New Todo -->
                                                                                         </div>
+                                                                                        <form id="newform" method="post" action="{{ route('SubProducts.store') }}">
+                                                                                            {{ csrf_field() }}
+                                                                                            <input type="hidden" name="SubID" value="{{ $DD->id }}">
+                                                                                            <div class="input-group">
+                                                                                                <label>المسار</label>
+                                                                                                <select  name="LoantypeID" class="form-control">
+                                                                                                    @foreach($loan as $loans)
+                                                                                                        <option value="{{ $loans->id }}">{{ $loans->Name }}</option>
+                                                                                                    @endforeach
+                                                                                                </select>
+                                                                                            </div>
+                                                                                            <div class="input-group">
+                                                                                                <label>المبلغ الكلي للمسار</label>
+                                                                                                <input type="text" name="Balance" class="form-control" >
+                                                                                            </div>
+                                                                                            <div class="input-group">
+                                                                                                <label> عدد المستفيدين للمسار</label>
+                                                                                                <input type="text" name="LoanCount" class="form-control" >
+                                                                                            </div>
+                                                                                        </form>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
