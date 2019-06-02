@@ -249,6 +249,16 @@
                                                                                                             <div class="clearfix"></div>
 
                                                                                                             <hr class="light-grey-hr row mt-10 mb-10">
+                                                                                                            <span class="pull-left inline-block capitalize-font txt-dark"> تاريخ الاقراض </span>
+                                                                                                            <span class="label label-primary pull-right">20-05-2017</span>
+                                                                                                            <div class="clearfix"></div>
+
+                                                                                                            <hr class="light-grey-hr row mt-10 mb-10">
+                                                                                                            <span class="pull-left inline-block capitalize-font txt-dark">  نسبة السداد </span>
+                                                                                                            <span class="label label-primary pull-right">20%</span>
+                                                                                                            <div class="clearfix"></div>
+
+                                                                                                            <hr class="light-grey-hr row mt-10 mb-10">
                                                                                                             <span class="pull-left inline-block capitalize-font txt-dark">عدد الاقساط</span>
                                                                                                             <span class="label label-primary pull-right">17</span>
                                                                                                             <div class="clearfix"></div>
