@@ -188,10 +188,10 @@
                                                                             <th>رقم الجوال</th>
                                                                             <th>مبلغ القرض</th>
                                                                             <th>عدد الاقساط</th>
-                                                                            <th>اسم الكفيل</th>
+                                                                            {{--<th>اسم الكفيل</th>
                                                                             <th>الفرع المشرف</th>
                                                                             <th>حالة القرض</th>
-                                                                            <th>رقم الحفظ</th>
+                                                                            <th>رقم الحفظ</th>--}}
                                                                             <th>اجراء</th>
                                                                         </tr>
                                                                         </thead>
@@ -213,12 +213,97 @@
                                                                                 <td>{{ $item->phoneNo }}</td>
                                                                                 <td>{{ $item->loanAmount }}</td>
                                                                                 <td>{{ $item->installmentsNum }}</td>
-                                                                                <td>{{ $item->KfeelName }}</td>
+                                                                                {{--<td>{{ $item->KfeelName }}</td>
                                                                                 <td>{{ $item->Branch }}</td>
                                                                                 <td>{{ $item->LoanStatus }}</td>
-                                                                                <td>{{ $item->SaveNo }}</td>
-                                                                                <td><a href="javascript:void(0)" class="text-inverse pr-10" title="تعديل" data-toggle="tooltip"><i class="zmdi zmdi-edit txt-warning"></i></a><a href="javascript:void(0)" class="text-inverse" title="حذف" data-toggle="tooltip"><i class="zmdi zmdi-delete txt-danger"></i></a></td>
+                                                                                <td>{{ $item->SaveNo }}</td>--}}
+                                                                                <td>
+                                                                                    <a href="#{{ $item->loanId }}" data-toggle="modal" class="text-inverse pr-10 btn btn-success btn-sm" title="تفاصيل" data-toggle="tooltip">بيانات التحصيل</a>
+                                                                                </td>
                                                                             </tr>
+                                                                            <div aria-hidden="true" role="dialog" tabindex="-1" id="{{ $item->loanId }}" class="modal fade" style="display: none;">
+                                                                                <div class="modal-dialog modal-lg">
+                                                                                    <div class="modal-content">
+                                                                                        <div class="modal-header">
+                                                                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                                                                            <h4 class="modal-title" id="myModalLabel">  تفاصيل التحصيل</h4>
+                                                                                        </div>
+                                                                                        <div class="modal-body">
+                                                                                            <div class="panel panel-default card-view">
+                                                                                                <div class="panel-heading">
+                                                                                                    <div class="pull-left">
+                                                                                                        <h6 class="panel-title txt-dark">بيانات التحصيل</h6>
+                                                                                                    </div>
+                                                                                                    <div class="clearfix"></div>
+                                                                                                </div>
+                                                                                                <div class="panel-wrapper collapse in">
+                                                                                                    <div class="panel-body">
+                                                                                                        <div>
+                                                                                                            <span class="pull-left inline-block capitalize-font txt-dark">قيمة القرض</span>
+                                                                                                            <span class="label label-warning pull-right">{{ number_format(40000) }}</span>
+                                                                                                            <div class="clearfix"></div>
+
+                                                                                                            <hr class="light-grey-hr row mt-10 mb-10">
+                                                                                                            <span class="pull-left inline-block capitalize-font txt-dark"> رقم القرض</span>
+                                                                                                            <span class="label label-primary pull-right">152565</span>
+                                                                                                            <div class="clearfix"></div>
+
+                                                                                                            <hr class="light-grey-hr row mt-10 mb-10">
+                                                                                                            <span class="pull-left inline-block capitalize-font txt-dark">عدد الاقساط</span>
+                                                                                                            <span class="label label-primary pull-right">17</span>
+                                                                                                            <div class="clearfix"></div>
+
+                                                                                                            <hr class="light-grey-hr row mt-10 mb-10">
+                                                                                                            <span class="pull-left inline-block capitalize-font txt-dark">قيمة القسط </span>
+                                                                                                            <span class="label label-primary pull-right">1200</span>
+                                                                                                            <div class="clearfix"></div>
+
+                                                                                                            <hr class="light-grey-hr row mt-10 mb-10">
+                                                                                                            <span class="pull-left inline-block capitalize-font txt-dark">الفرع المشرف</span>
+                                                                                                            <span class="label label-danger pull-right">الرياض</span>
+                                                                                                            <div class="clearfix"></div>
+
+                                                                                                            <hr class="light-grey-hr row mt-10 mb-10">
+                                                                                                            <span class="pull-left inline-block capitalize-font txt-dark">اسم الكفيل</span>
+                                                                                                            <span class="label label-success pull-right">محمد احمد</span>
+                                                                                                            <div class="clearfix"></div>
+
+                                                                                                            <hr class="light-grey-hr row mt-10 mb-10">
+                                                                                                            <span class="pull-left inline-block capitalize-font txt-dark">حالة القرض</span>
+                                                                                                            <span class="label label-primary pull-right">مفتوح</span>
+                                                                                                            <div class="clearfix"></div>
+
+                                                                                                            <hr class="light-grey-hr row mt-10 mb-10">
+                                                                                                            <span class="pull-left inline-block capitalize-font txt-dark"> المبالغ المستحقة</span>
+                                                                                                            <span class="label label-primary pull-right">0</span>
+                                                                                                            <div class="clearfix"></div>
+
+                                                                                                            <hr class="light-grey-hr row mt-10 mb-10">
+                                                                                                            <span class="pull-left inline-block capitalize-font txt-dark"> المسدد</span>
+                                                                                                            <span class="label label-primary pull-right">23,000</span>
+                                                                                                            <div class="clearfix"></div>
+
+                                                                                                            <hr class="light-grey-hr row mt-10 mb-10">
+                                                                                                            <span class="pull-left inline-block capitalize-font txt-dark"> المتأخر</span>
+                                                                                                            <span class="label label-primary pull-right">0</span>
+                                                                                                            <div class="clearfix"></div>
+
+                                                                                                            <hr class="light-grey-hr row mt-10 mb-10">
+                                                                                                            <span class="pull-left inline-block capitalize-font txt-dark"> المتبقي</span>
+                                                                                                            <span class="label label-primary pull-right">17000</span>
+                                                                                                            <div class="clearfix"></div>
+
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="modal-footer"></div>
+                                                                                    </div>
+                                                                                    <!-- /.modal-content -->
+                                                                                </div>
+                                                                                <!-- /.modal-dialog -->
+                                                                            </div>
                                                                         @endforeach
                                                                         </tbody>
                                                                     </table>
