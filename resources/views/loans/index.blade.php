@@ -299,7 +299,7 @@
                                                                                                             <div class="clearfix"></div>
 
                                                                                                             <hr class="light-grey-hr row mt-10 mb-10">
-                                                                                                            <span class="pull-left inline-block capitalize-font txt-dark"> المتأخر</span>
+                                                                                                            <span class="pull-left inline-block capitalize-font txt-dark"> المبالغ المتعثرة</span>
                                                                                                             <span class="label label-primary pull-right">0</span>
                                                                                                             <div class="clearfix"></div>
 
