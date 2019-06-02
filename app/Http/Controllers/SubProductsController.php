@@ -37,7 +37,7 @@ class SubProductsController extends Controller
     {
 
         $input=  $request->except('_token');
-        dd($input);
+        //dd($input);
         $this->validate($request, [
             'SubID' => 'required',
             'LoantypeID' => 'required',

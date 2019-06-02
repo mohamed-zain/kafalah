@@ -139,8 +139,8 @@
                                                                                                         <li class="todo-item">
                                                                                                             <div class="checkbox checkbox-default">
                                                                                                                 <label for="checkbox001">{{ $product->Name }}</label>
-                                                                                                                <span class="pull-left">{{ $product->LoanCount }}</span>
-                                                                                                                <span class="pull-left">{{ $product->Balance }}</span>
+                                                                                                                <span style="align-content: center">{{ $product->LoanCount }} مستفيد </span>
+                                                                                                                <span class="pull-right">{{ $product->Balance }} ريال </span>
                                                                                                             </div>
                                                                                                         </li>
                                                                                                         <li>
@@ -177,6 +177,7 @@
                                                                                                 <label> عدد المستفيدين للمسار</label>
                                                                                                 <input type="text" name="LoanCount" class="form-control" >
                                                                                             </div>
+                                                                                            <button type="submit" class="btn btn-sm btn-primary">اضافة</button>
                                                                                         </form>
                                                                                     </div>
                                                                                 </div>
