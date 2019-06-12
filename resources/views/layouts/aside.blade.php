@@ -52,7 +52,7 @@
             <a href="javascript:void(0);" data-toggle="collapse" data-target="#table_dr"><div class="pull-left"><i class="zmdi zmdi-format-size mr-20"></i><span class="right-nav-text">بيانات النظام</span></div><div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div><div class="clearfix"></div></a>
             <ul id="table_dr" class="collapse collapse-level-1 two-col-list">
                 <li>
-                    <a href="{{ url('LoansTypes') }}">انواع المحافظ</a>
+                    <a href="{{ url('LoansTypes') }}"> القطاعات</a>
                 </li>
             </ul>
         </li>
