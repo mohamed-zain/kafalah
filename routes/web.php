@@ -17,7 +17,9 @@ use Illuminate\Http\Request;
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/test', function () {
+    return view('test');
+});
 Route::middleware(['auth'])->group(function () {
     Route::get('/', function () {
         $widget = App\Wallet::first();
@@ -37,6 +39,17 @@ Route::middleware(['auth'])->group(function () {
 
 
 });
+
+
+    Route::post('get-products-list', function (Request $request) {
+    //auth::logout();
+    $dat = \App\SubProducts::where('SubID','=',$request->SubID)
+        ->join('loans_types','loans_types.id','=','sub_products.LoantypeID')
+        ->pluck("loans_types.Name","loans_types.id");
+
+    return response()->json($dat);
+})->name('get-products-list');
+
 
 Route::post('LoansListsdata', function (Request $request) {
     //auth::logout();

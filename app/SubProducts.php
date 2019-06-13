@@ -11,6 +11,7 @@ class SubProducts extends Model
         'SubID',
         'LoantypeID',
         'LoanCount',
-        'Balance'
+        'Balance',
+        'kafalah'
     ];
 }

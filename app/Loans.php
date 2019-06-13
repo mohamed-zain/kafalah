@@ -9,6 +9,7 @@ class Loans extends Model
     protected $table = 'loans';
     protected $fillable = [
         'wallet_Id',
+        'Sub_wallet_Id',
         'loanId',
         'agentName',
         'Gender',

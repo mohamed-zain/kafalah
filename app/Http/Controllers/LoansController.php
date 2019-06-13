@@ -54,21 +54,12 @@ class LoansController extends Controller
             'agentName' => 'required',
             'wallet_Id' => 'required',
             'installmentsNum' => 'required',
-            'Gender' => 'required',
-            'age' => 'required',
-            'identityNo' => 'required',
-            'phoneNo' => 'required',
-            'loanAmount' => 'required',
+
         ],
             $messsages = array(
                 'agentName.required'=>'يجب كتابة الاسم',
                 'wallet_Id.required'=>'يجب اختيار المحفظة',
                 'installmentsNum.required'=>'يجب كتابة عدد الاقساط ',
-                'Gender.required'=>'يجب اختيار الجنس',
-                'age.required'=>'يجب كتابة العمر',
-                'identityNo.required'=>'يجب كتابة رقم الهوية',
-                'phoneNo.required'=>'يجب كتابة رقم الجوال',
-                'loanAmount.required'=>'يجب كتابة قيمة القرض',
             )
 
         );

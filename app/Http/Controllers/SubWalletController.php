@@ -54,11 +54,7 @@ class SubWalletController extends Controller
         $input = $request->all();
         $this->validate($request, [
             'name' => 'required',
-            'financing_Ceiling' => 'required',
-            'sponsorship_Rate' => 'required',
-            'repayment_Period' => 'required',
             'Balance' => 'required',
-            'prodects' => 'required',
         ]);
         \Session::flash('Flash', 'تم انشاء المحفظة بنجاح');
         SubWallet::create($input);

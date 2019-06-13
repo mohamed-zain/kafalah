@@ -138,9 +138,10 @@
                                                                                                     @foreach($products as $product)
                                                                                                         <li class="todo-item">
                                                                                                             <div class="checkbox checkbox-default">
-                                                                                                                <label for="checkbox001">{{ $product->Name }}</label>
+                                                                                                                <label for="">{{ $product->Name }}</label>
                                                                                                                 <span style="align-content: center">{{ $product->LoanCount }} مستفيد </span>
                                                                                                                 <span class="pull-right">{{ $product->Balance }} ريال </span>
+                                                                                                                <span class="pull-right" style="margin-left: 100px;">{{ $product->kafalah }} % </span>
                                                                                                             </div>
                                                                                                         </li>
                                                                                                         <li>
@@ -169,14 +170,22 @@
                                                                                                     @endforeach
                                                                                                 </select>
                                                                                             </div>
+                                                                                            <br/>
                                                                                             <div class="input-group">
                                                                                                 <label>المبلغ الكلي للمسار</label>
                                                                                                 <input type="text" name="Balance" class="form-control" >
                                                                                             </div>
+                                                                                            <br/>
                                                                                             <div class="input-group">
                                                                                                 <label> عدد المستفيدين للمسار</label>
                                                                                                 <input type="text" name="LoanCount" class="form-control" >
                                                                                             </div>
+                                                                                            <br/>
+                                                                                            <div class="input-group">
+                                                                                                <label>نسبة الكفالة</label>
+                                                                                                <input type="text" name="kafalah" class="form-control" >
+                                                                                            </div>
+                                                                                            <br/>
                                                                                             <button type="submit" class="btn btn-sm btn-primary">اضافة</button>
                                                                                         </form>
                                                                                     </div>
@@ -186,7 +195,6 @@
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-sm btn-info" data-dismiss="modal">الغاء</button>
-                                                                        <button type="submit" class="btn btn-sm btn-primary" form="newform">اضافة</button>
                                                                     </div>
                                                                 </div>
                                                                 <!-- /.modal-content -->
@@ -224,14 +232,10 @@
                                                                                         </div>
                                                                                     </div>
                                                                                     <div class="form-group">
-                                                                                        <label class="control-label mb-10" for="prodects">القطاع</label>
+                                                                                        <label class="control-label mb-10" for="Balance"> مبلغ المحفظة الكلي</label>
                                                                                         <div class="input-group">
                                                                                             <div class="input-group-addon"><i class="icon-envelope-open"></i></div>
-                                                                                            <select class="form-control" name="prodects">
-                                                                                                <option value="">------اختار------</option>
-                                                                                                <option value="السيارات">السيارات</option>
-                                                                                                <option value="الاسر المنتجة">الاسر المنتجة</option>
-                                                                                            </select>
+                                                                                            <input type="number" class="form-control" name="totalPrice" value="{{ $DD->totalPrice }}">
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -257,13 +261,7 @@
                                                                                             <input type="number" class="form-control" name="Balance" value="{{ $DD->Balance }}">
                                                                                         </div>
                                                                                     </div>
-                                                                                    <div class="form-group">
-                                                                                        <label class="control-label mb-10" for="Balance"> مبلغ المحفظة الكلي</label>
-                                                                                        <div class="input-group">
-                                                                                            <div class="input-group-addon"><i class="icon-envelope-open"></i></div>
-                                                                                            <input type="number" class="form-control" name="totalPrice" value="{{ $DD->totalPrice }}">
-                                                                                        </div>
-                                                                                    </div>
+
                                                                                 </div>
                                                                             </div>
                                                                             <button type="submit" id="Addwallet00" class="btn btn-success mr-10">تعديل</button>
@@ -321,14 +319,10 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label mb-10" for="prodects">القطاع</label>
+                                    <label class="control-label mb-10" for="Balance"> مبلغ المحفظة الكلي</label>
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="icon-envelope-open"></i></div>
-                                        <select class="form-control" name="prodects">
-                                            <option value="">------اختار------</option>
-                                            <option value="السيارات">السيارات</option>
-                                            <option value="الاسر المنتجة">الاسر المنتجة</option>
-                                        </select>
+                                        <input type="number" class="form-control" name="totalPrice" placeholder="مبلغ المحفظة الكلي">
                                     </div>
                                 </div>
                             </div>
@@ -354,13 +348,7 @@
                                         <input type="number" class="form-control" name="Balance" placeholder="مخصص المحفظة">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="control-label mb-10" for="Balance"> مبلغ المحفظة الكلي</label>
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="icon-envelope-open"></i></div>
-                                        <input type="number" class="form-control" name="totalPrice" placeholder="مبلغ المحفظة الكلي">
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                         <button type="submit" id="Addwallet00" class="btn btn-success mr-10">انشاء</button>

@@ -79,7 +79,7 @@
                                                                     <div class="col-lg-6 mb-20">
 
                                                                             <label> المحفظة</label>
-                                                                            <select class="form-control" name="wallet_Id">
+                                                                            <select class="form-control" name="wallet_Id" id="wallet_Id">
                                                                                 <option>-------اختار--------</option>
                                                                                 @foreach($wallet as $wallets)
                                                                                 <option value="{{ $wallets->id }}">{{ $wallets->name }}</option>
@@ -88,9 +88,19 @@
 
 
                                                                     </div>
+                                                            <div class="col-lg-12 mb-20">
+
+                                                                <label> المسار</label>
+                                                                <select class="form-control" name="Sub_wallet_Id" id="Course">
+
+                                                                </select>
 
 
-                                                                <div class="col-md-6 mb-20">
+                                                            </div>
+
+
+
+                                                            <div class="col-md-6 mb-20">
                                                                     <label>الجنس </label>
                                                                     <select class="form-control" name="Gender">
                                                                         <option>-------اختار--------</option>
@@ -345,4 +355,8 @@
     <script src="{{ asset('dist/js/dataTables-data.js') }}"></script>
     <script src="{{ asset('dist/js/myjs/subwallet.js') }}"></script>
 
+    <script type="text/javascript">
+
+
+    </script>
 @endsection
